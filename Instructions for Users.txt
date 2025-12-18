@@ -1,7 +1,3 @@
-CSI4118 Assignment 2 - Instructions
-Student: Megan Palczak 300301072
-Date: October 27, 2025
-
 This folder contains a client-server application using Java sockets.
 
 SYSTEM REQUIREMENTS
@@ -42,7 +38,7 @@ Server: 192.168.1.100
 Server: BYE
 Session is terminated.
 
-TESTING LOCALHOST REJECTION (Requirement #8)
+TESTING LOCALHOST REJECTION
 -------------------------------------------
 On the SAME machine as the server, run:
     java myClient 127.0.0.1 9999
@@ -64,7 +60,7 @@ Example:
     [Mon Oct 27 10:15:31 EDT 2025] REQUEST from 192.168.1.100 | Student: 300301072 | Command: type3
     [Mon Oct 27 10:15:45 EDT 2025] Stored message for 192.168.1.100: HELLO 
 
-SUBMISSION FILES
+FILES
 ----------------
 - myClient.java
 - myServer.java
