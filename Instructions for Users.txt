@@ -70,3 +70,4 @@ FILES
 	- myClient_terminal.png
 	- myServer_terminal.png
 	- server_log.txt 
+- README.txt
