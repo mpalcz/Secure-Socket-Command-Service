@@ -1,4 +1,5 @@
 Project Overview
+
 This project implements a Java-based client/server application using TCP sockets. The system follows a predefined command protocol that allows a client to interact with a server 
 by sending structured command strings. The server parses and executes supported commands, returns appropriate responses to the client, and maintains logs of all client interactions.
 
