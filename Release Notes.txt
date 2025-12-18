@@ -1,0 +1,29 @@
+KEY FEATURES
+------------
+- Full command string input (e.g., CSI4118 type3 300301072 HELLO)
+- Client encodes, server decodes using shared shift
+- Shift stays per session after type0
+- server_log.txt records:
+    - Client IP
+    - Student number
+    - Command type
+    - Decoded messages on disconnect
+- Invalid commands return ERROR messages
+- Input validation on client and server
+
+CAESAR CIPHER BEHAVIOR
+----------------------
+- Only letters are shifted
+- Case is preserved
+- Non-letters (spaces, numbers, punctuation) unchanged
+- Shift wraps around alphabet (mod 26)
+- Default shift = 3
+- type0 updates shift for future type3 messages
+
+KNOWN BEHAVIOR (Intended)
+-------------------------
+1. Server does not exit on client disconnect, it keeps running
+2. Each client has independent shift and message buffer
+3. Messages are appended with space: "HELLO WORLD "
+4. Log file is appended, never overwritten
+5. No GUI, only command-line

@@ -1,0 +1,76 @@
+CSI4118 Assignment 2 - Instructions
+Student: Megan Palczak 300301072
+Date: October 27, 2025
+
+This folder contains a client-server application using Java sockets.
+
+SYSTEM REQUIREMENTS
+-------------------
+- Java 11 or higher
+- Two machines (tested for project) or one machine with a virtual machine (using bridge adapter for networking with separate IP addresses)
+- Network access between machines
+
+HOW TO COMPILE
+--------------
+1. Download .java files on separate machines
+2. Open terminal/command prompt.
+
+Compile:
+    javac myClient.java [on machine 1]
+    javac myServer.java [on machine 2]
+
+HOW TO RUN (Using 2 machines)
+-----------------------------------------
+
+1. Open machine 1 and download and compile myServer.java
+2. In machine 1, go on Windows Defender Firewall > Advanced Settings > Inbound Rules > New Rule > Port > TCP > 9999 (chosen because it is not likely to conflict) > Allow (private network) > Name [CSI4118 Server] for example
+3. On the command line type ipconfig to extract the IPv4 address and note this
+3. Run the server file by java myServer
+4. On machine 2 download and compile myClient.java
+5. Run client file by java myClient [ipv4 address of machine 1] 9999 [for port number with accepting connections in machine 1]
+6. On the client, type relevant commands as described in the assignment description
+
+EXAMPLE INTERACTION
+-------------------
+> CSI4118 type0 300301072 4
+Server: OK
+> CSI4118 type3 300301072 HELLO
+Server: GOT IT
+> CSI4118 type1 300301072
+Server: 192.168.1.100
+> CSI4118 type4 300301072
+Server: BYE
+Session is terminated.
+
+TESTING LOCALHOST REJECTION (Requirement #8)
+-------------------------------------------
+On the SAME machine as the server, run:
+    java myClient 127.0.0.1 9999
+
+Server log will show:
+    [Timestamp] REJECTED localhost connection from 127.0.0.1
+
+Client will fail to connect → PROOF that localhost is blocked.
+
+LOG FILE (server_log.txt)
+-------------------------
+Generated automatically. Contains:
+- Server start
+- Client connections/disconnections
+- All commands with IP and student number
+- Decoded messages on disconnect
+
+Example:
+    [Mon Oct 27 10:15:31 EDT 2025] REQUEST from 192.168.1.100 | Student: 300301072 | Command: type3
+    [Mon Oct 27 10:15:45 EDT 2025] Stored message for 192.168.1.100: HELLO 
+
+SUBMISSION FILES
+----------------
+- myClient.java
+- myServer.java
+- Instructions for Users.txt
+- Release Notes.txt
+- Session_Results (after trial run)
+	- myClient_terminal.png
+	- myServer_terminal.png
+	- server_log.txt 
