@@ -6,6 +6,7 @@ by sending structured command strings. The server parses and executes supported 
 The project demonstrates fundamental concepts of network programming, client/server architectures, message parsing, basic cryptography (Caesar cipher), and session-based data handling.
 
 System Architecture
+
 - Client (`myClient`)
   - Command-line application.
   - Prompts the user for an operation number and any required parameters.
@@ -21,6 +22,7 @@ System Architecture
   - Decodes and stores encrypted messages for the duration of a client session.
 
 Command Protocol
+
 All commands sent from the client to the server must follow this format:
   CSI4118 <commandType> <studentNumber> [parameters]
 
@@ -40,12 +42,14 @@ Supported Commands
 | 4 | Bye | None | Replies `BYE` and closes the client connection |
 
 Caesar Cipher Handling
+
 The server maintains a Caesar cipher password (shift value) per client session.  
 - Messages received using the Send Message command are decoded using the current password.
 - Decoded messages are appended and stored for the duration of the client connection.
 - The password can be set or reset using the Set Password command.
 
 Functional Requirements
+
 - Java sockets must be used (Java 1.4 or higher).
 - The programs must be named:
   - `myClient` (client)
@@ -72,6 +76,7 @@ Project Structure
 └── README.md
 
 Usage Instructions
+
 A separate file titled `Instructions for Users` is provided with this project.  
 Users should consult this file for:
 - Compilation instructions
